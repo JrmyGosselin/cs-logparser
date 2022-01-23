@@ -20,7 +20,7 @@ public class App {
         EventWriter eventWriter = new EventWriter();
         logParser.attachEventWriter(eventWriter);
 
-        logParser.parseLogs(Paths.get(args[1]));
+        logParser.parseLogs(Paths.get(args[0]));
 
         server.displayEvents();
         server.stop();

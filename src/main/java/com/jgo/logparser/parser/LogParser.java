@@ -25,6 +25,10 @@ public class LogParser {
         Map<String, List<LogEntry>> pairedEntries = new HashMap<>();
         ParsingResults parsingResults = new ParsingResults();
 
+        if(!Files.exists(logs)) {
+            throw new RuntimeException("Log file not found");
+        }
+
         // We need to use streams to read the file, otherwise we might bloat the memory
         // lines() uses lazy loading, so it should work fine with very large files
 
